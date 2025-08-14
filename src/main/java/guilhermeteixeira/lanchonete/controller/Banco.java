@@ -1,44 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package guilhermeteixeira.lanchonete.controller;
 
 import guilhermeteixeira.lanchonete.model.Lanche;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Reader;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- *
- * @author GUILHERME
- */
+
 public class Banco {
     private String url;
     private final String usuario;
     private final String senha ;
+    private Connection conexao;
     
     public Banco(){
+        
         url = "jdbc:mysql://localhost:3306";
         usuario = "root";
         senha = "root";
         
+        inicializarBanco(url, usuario, senha);
     }
-    
-    /**
-     *
-     * @return
-     */
-    public Connection conectar(){
+       public Connection conectar(){
         try {
+            url = "jdbc:mysql://localhost:3306/lanchonete";
           
                Connection conexao = DriverManager.getConnection(url, usuario, senha);
             System.out.println("Conexão com o banco de dados Estabelecida! com sucesso!");
@@ -46,8 +37,7 @@ public class Banco {
             return conexao;
         } catch (SQLException e){
             
-            
-            System.out.println("Não foi possivel conectar no banco de dados");
+             System.out.println("Não foi possivel conectar no banco de dados");
             return null;
         }
     } 
@@ -78,7 +68,8 @@ public class Banco {
                  try {
                        InputStream is = new FileInputStream ("banco.sql");
                         InputStreamReader isr = new InputStreamReader(is);
-                        try (BufferedReader br = new BufferedReader (isr)) {
+                        BufferedReader br = new BufferedReader (isr);
+                            
                             String linha;
                             StringBuilder sql = new StringBuilder();
                             
@@ -96,15 +87,13 @@ public class Banco {
                                 linha = br.readLine();
                             }
                             stmt.close();
-                        }
-                    } catch(IOException | SQLException e){
-                        System.out.println("Não foi possivel ler o arquivo banco.sql");
-                    }
-                    
-                } catch (SQLException e){
-                    System.out.println("Erro ao conectar no banco de dados metrodo inicializar Banco");
-                
+                            conexao.close();
+                                                        
+                     } catch (Exception e){
+                     System.out.println("Não foi possivel ler o arquivo banco.sql");
+            }
+               }  catch (SQLException e){
+                     System.out.println("Erro ao se conectar no banco de dados, no metodo inicializar banco");
                 }
             }
 }
-
