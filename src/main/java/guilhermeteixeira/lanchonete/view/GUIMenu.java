@@ -5,6 +5,7 @@
 package guilhermeteixeira.lanchonete.view;
 
 import guilhermeteixeira.lanchonete.model.Lanche;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -213,6 +214,7 @@ public class GUIMenu extends javax.swing.JFrame {
                      Lanche lanche = new Lanche(nome, precoConvertido);
                      lanche.apresentarLanche();
                      
+                                         
                      jTextFieldCadastroLancheNome.setText("");
                      jTextFieldCadastroLanchePreco.setText("");
                      
@@ -224,14 +226,13 @@ public class GUIMenu extends javax.swing.JFrame {
                  }
              }
         }
-       
-        
+    }
+        public JInternalFrame getjInternalFrameCadastroLanche () {
+         return jInternalFrameCadastroLanche;
+
     }//GEN-LAST:event_jButtonCadastroLancheSalvarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-  
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastroLancheCancelar;

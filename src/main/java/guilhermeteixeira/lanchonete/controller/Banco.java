@@ -13,10 +13,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-public class Banco {
+public final class Banco {
     private String url;
-    private final String usuario;
-    private final String senha ;
+    private String usuario;
+    private String senha ;
     private Connection conexao;
     
     public Banco(){
@@ -24,12 +24,13 @@ public class Banco {
         url = "jdbc:mysql://localhost:3306";
         usuario = "root";
         senha = "root";
-        
-        inicializarBanco(url, usuario, senha);
+                
     }
        public Connection conectar(){
         try {
             url = "jdbc:mysql://localhost:3306/lanchonete";
+            usuario = "root";
+            senha = "root";
           
                Connection conexao = DriverManager.getConnection(url, usuario, senha);
             System.out.println("Conexão com o banco de dados Estabelecida! com sucesso!");
@@ -42,14 +43,14 @@ public class Banco {
         }
     } 
 
-    public void salvar(Lanche lanche, Connection conexao){
+    public void salvar(String nome, double preco, Connection conexao){
         String sql = "INSERT INTO lanche(nome, preco) VALUES(?, ?)";
         
            try {
                PreparedStatement stmt = conexao.prepareStatement(sql);
                
-               stmt.setString(1, lanche.getNome());
-               stmt.setDouble(2, lanche.getPreco());
+               stmt.setString(1, nome);
+               stmt.setDouble(2, preco);
                
                int linhasAfetadas = stmt.executeUpdate();
                if (linhasAfetadas > 0) {
@@ -60,7 +61,10 @@ public class Banco {
            }
     }
       
-            public void inicializarBanco(String url, String usuario, String senha){
+            public void inicializarBanco(){
+                 url = "jdbc:mysql://localhost:3306";
+                 usuario = "root";
+                 senha = "root";
                 try {
                     Connection conexao = DriverManager.getConnection(url, usuario, senha);
                     Statement stmt = conexao.createStatement();
