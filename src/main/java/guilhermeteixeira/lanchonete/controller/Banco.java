@@ -9,11 +9,14 @@ import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.Normalizer;
+import java.util.ArrayList;
+import java.text.Normalizer.Form;
 
-
-public final class Banco {
+public class Banco {
     private String url;
     private String usuario;
     private String senha ;
@@ -24,7 +27,8 @@ public final class Banco {
         url = "jdbc:mysql://localhost:3306";
         usuario = "root";
         senha = "root";
-                
+        
+                               
     }
        public Connection conectar(){
         try {
@@ -48,7 +52,6 @@ public final class Banco {
         
            try {
                PreparedStatement stmt = conexao.prepareStatement(sql);
-               
                stmt.setString(1, nome);
                stmt.setDouble(2, preco);
                
@@ -74,8 +77,8 @@ public final class Banco {
                         InputStreamReader isr = new InputStreamReader(is);
                         BufferedReader br = new BufferedReader (isr);
                             
-                            String linha;
-                            StringBuilder sql = new StringBuilder();
+                        String linha;
+                        StringBuilder sql = new StringBuilder();
                             
                             linha = br.readLine();
                             
@@ -100,4 +103,43 @@ public final class Banco {
                      System.out.println("Erro ao se conectar no banco de dados, no metodo inicializar banco");
                 }
             }
+            public  ArrayList<Lanche> buscarPorTrechoNome(String trechoNome) {
+                
+                ArrayList<Lanche> listaDeLanches = new ArrayList<>();
+                String trechoNormalizado = "%" + normalizarTexto(trechoNome)+ "%";
+                String sql = "SELECT * FROM lanche WHERE nome LIKE ?";
+                 try{
+                     Connection conexao = conectar();
+                     PreparedStatement stmt = conexao.prepareStatement(sql);
+                    int l = 1;
+                     stmt.setString(l, trechoNormalizado);
+                     
+                     ResultSet rs = stmt.executeQuery();
+                     
+                     while(rs.next()){
+                         int id = rs.getInt("id");
+                         String nome = rs.getString("nome");
+                         double preco = rs.getDouble("preco");
+                         Lanche lanche = new Lanche(nome, preco);
+                         lanche.setId(id);
+                         
+                         listaDeLanches.add(lanche);
+                     }
+                     rs.close();
+                     stmt.close();
+                     conexao.close();
+                     
+                     
+                    
+                 } catch(SQLException e) {
+                  System.out.println("Não Conseguiu conectar no Banco de dados no metodo buscarPorTrechoNome()");                             
+                 }
+                  return listaDeLanches;
+            }
+                private String normalizarTexto(String trecho){
+                return Normalizer.normalize(trecho, Normalizer.Form.NFD).replace("[^\\p{ASCII}]", "");   
+                
+
+   
+    }
 }

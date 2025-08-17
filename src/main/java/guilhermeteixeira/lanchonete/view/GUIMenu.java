@@ -213,7 +213,7 @@ public class GUIMenu extends javax.swing.JFrame {
                      double precoConvertido = Double.parseDouble(preco);
                      Lanche lanche = new Lanche(nome, precoConvertido);
                      lanche.apresentarLanche();
-                     
+                     lanche.salvar(nome, precoConvertido);
                                          
                      jTextFieldCadastroLancheNome.setText("");
                      jTextFieldCadastroLanchePreco.setText("");
@@ -253,4 +253,7 @@ public class GUIMenu extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldCadastroLancheNome;
     private javax.swing.JTextField jTextFieldCadastroLanchePreco;
     // End of variables declaration//GEN-END:variables
-}
+
+        }
+
+

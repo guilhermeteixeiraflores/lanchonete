@@ -6,5 +6,7 @@ guilhermeteixeira\lanchonete\view\GUIMenu$4.class
 guilhermeteixeira\lanchonete\model\Lanche.class
 guilhermeteixeira\lanchonete\view\GUIMenu$2.class
 guilhermeteixeira\lanchonete\controller\Banco.class
+guilhermeteixeira\lanchonete\controller\stmt.class
 guilhermeteixeira\lanchonete\Lanchonete$1.class
 guilhermeteixeira\lanchonete\view\GUIMenu$3.class
+guilhermeteixeira\lanchonete\controller\Normalizar.class
