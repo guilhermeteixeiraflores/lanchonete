@@ -138,8 +138,27 @@ public class Banco {
             }
                 private String normalizarTexto(String trecho){
                 return Normalizer.normalize(trecho, Normalizer.Form.NFD).replace("[^\\p{ASCII}]", "");   
-                
-
-   
-    }
-}
+             
+           }
+                public void deletar(int id){
+                    String sql = "DELETE FROM lanche WHERE id = ?";
+                    
+                    try {
+                     Connection conexao = conectar();
+                     PreparedStatement stmt = conexao.prepareStatement(sql);
+                     stmt.setInt(1, id);
+                     
+                     int linhasAfetadas = stmt.executeUpdate();
+                     if (linhasAfetadas > 0){
+                         System.out.println("O lanche de ID "+ id + "Foi Excluido com Sucesso!");
+                     } else {
+                         System.out.println("O lanche de ID "+id+" Não foi Encontrado!");
+                     }
+                         
+                     stmt.close();
+                     conexao.close();
+                }catch (SQLException e){
+                    System.out.println("Houve um erro ao tentar conectar com o banco de dados no medtodo Excluir!");
+                }
+                }
+  }

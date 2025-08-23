@@ -77,7 +77,9 @@ public class Lanche {
           return lanches;
        }
            public void deletar(int id){
-               
+          Banco b = new Banco();
+          Connection conexao = b.conectar();
+          b.deletar(id);
            }
     /**
      * @return the id
