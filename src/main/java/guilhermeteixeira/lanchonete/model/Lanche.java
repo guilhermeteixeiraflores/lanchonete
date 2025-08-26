@@ -81,6 +81,19 @@ public class Lanche {
           Connection conexao = b.conectar();
           b.deletar(id);
            }
+             public void editar(String nome, double preco, int id) {
+                 Banco b = new Banco();
+                  Connection conexao = b.conectar();
+                  b.editar(nome, preco, id);
+                  
+             }
+                  public Lanche buscarPorId(int id){
+                      Banco b = new Banco();
+                      Connection conexao = b.conectar();
+                      Lanche lanche = b.buscarPorId(id);
+                      return lanche;
+                              
+                    }
     /**
      * @return the id
      */
@@ -94,5 +107,7 @@ public class Lanche {
     public void setId(int id) {
         this.id = id;
     }
+
+         }
           
-    }
+    

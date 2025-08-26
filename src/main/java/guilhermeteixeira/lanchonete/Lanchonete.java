@@ -49,6 +49,7 @@ java.awt.EventQueue.invokeLater(new Runnable(){
      janelaPrincipal.setVisible(true);
      janelaPrincipal.getjInternalFrameCadastroLanche().setVisible(false);
      janelaPrincipal.getJInternalFramePesquisar().setVisible(false);
+     janelaPrincipal.getJInternalFrameEditarCadastro().setVisible(false);
           }
 });
 }
