@@ -27,10 +27,7 @@ public class Lanchonete {
     }  */
     
     public static void main(String args[]){
-        
-        GUIMenu janelaPrincipal = new GUIMenu();
-        
-        janelaPrincipal.setVisible(true);
+       GUIMenu janelaPrincipal = new GUIMenu();
        Banco b = new Banco();
        b.inicializarBanco();
        
