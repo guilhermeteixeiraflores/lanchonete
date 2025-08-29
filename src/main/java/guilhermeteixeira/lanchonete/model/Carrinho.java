@@ -30,7 +30,7 @@ public class Carrinho {
           }
       }             
              public double calcularPreco(){
-        double total = 0;
+                  double total = 0;                
                  for (Lanche lanche: lanches){
                    total += lanche.getPreco();
                  }
@@ -40,4 +40,6 @@ public class Carrinho {
                   return lanches;
                   
              }
-}
+                            
+             }
+

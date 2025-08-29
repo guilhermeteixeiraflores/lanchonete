@@ -64,7 +64,6 @@ public class Lanche {
     }
     
    public void salvar (String nome, double preco){
-       
     Banco b = new Banco();
     Connection conexao = b.conectar();
     b.salvar(nome, preco, conexao);
@@ -94,6 +93,12 @@ public class Lanche {
                       return lanche;
                               
                     }
+                  public void adicionarCarrinho(int id, int quantidade){
+                   Lanche lanche = buscarPorId(id);
+                   Banco b = new Banco();
+                   Connection conexao = b.conectar();
+                   b.adicionarCarrinho(lanche, quantidade, conexao);
+                  }
     /**
      * @return the id
      */
@@ -108,6 +113,7 @@ public class Lanche {
         this.id = id;
     }
 
+   
          }
           
     

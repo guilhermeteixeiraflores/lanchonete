@@ -1,6 +1,7 @@
 package guilhermeteixeira.lanchonete.view;
 
 
+import guilhermeteixeira.lanchonete.model.Carrinho;
 import guilhermeteixeira.lanchonete.model.Lanche;
 import java.util.ArrayList;
 import javax.swing.JInternalFrame;
@@ -517,7 +518,9 @@ public class GUIMenu extends javax.swing.JFrame {
 
     private void jButtonPesquisarConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarConfirmarActionPerformed
                 // TODO add your handling code here:
-                Lanche lanche = new Lanche();
+          Lanche lanche = new Lanche();
+          Carrinho carrinho = new Carrinho();
+         
           String opcao = jComboBoxPesquisarAcao.getSelectedItem().toString();
           System.out.println("Opção selecionada: "+opcao);
           
@@ -530,8 +533,9 @@ public class GUIMenu extends javax.swing.JFrame {
                   
                  jComboBoxPesquisarAcao.setSelectedIndex(0);
                  jTextFieldPesquisarID.setText("");
+                 jTextFieldPesquisarQuantidade.setText("");
                 jInternalFramePesquisar.setVisible(false);   
-              }if (opcao.equals("Editar")) {  // editar
+              }else if (opcao.equals("Editar")) {  // editar
               jInternalFramePesquisar.setVisible(false);
                             
              Lanche lancheRecuperado = lanche.buscarPorId(idPesquisar);
@@ -540,12 +544,13 @@ public class GUIMenu extends javax.swing.JFrame {
              jTextFieldEditarNome.setText(lancheRecuperado.getNome());
              jTextFieldEditarPreco.setText(lancheRecuperado.getPreco()+"");
              jInternalFrameEditarCadastro.setVisible(true);
-             
-              } else if (opcao.equals("Adicionar no Carrinho")){ //Adicionar no carrinho
-                   JOptionPane.showMessageDialog(rootPane, "O produto foi adicionado no Carrinho!"); 
-                     jTextFieldEditarId.setText(idPesquisar+"");
-                     jComboBoxPesquisarAcao.setSelectedIndex(0);
-                     jInternalFramePesquisar.setVisible(false); 
+             } else if (opcao.equals("Adicionar no Carrinho")){ //Adicionar no carrinho
+                 JOptionPane.showMessageDialog(rootPane,"O lanche foi Adicionado no Carrinho!");
+                 jTextFieldPesquisarID.setText("");
+                 jComboBoxPesquisarAcao.setSelectedIndex(0);
+                 jInternalFramePesquisar.setVisible(false);
+                 
+                  
                       }
     }//GEN-LAST:event_jButtonPesquisarConfirmarActionPerformed
 
