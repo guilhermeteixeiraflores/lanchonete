@@ -40,17 +40,13 @@ public class GUIMenu extends javax.swing.JFrame {
 
         jToolBar1 = new javax.swing.JToolBar();
         jDesktopPane = new javax.swing.JDesktopPane();
-        jInternalFramePesquisar = new javax.swing.JInternalFrame();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTablePesquisarPorNome = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jComboBoxPesquisarAcao = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
-        jTextFieldPesquisarID = new javax.swing.JTextField();
-        jButtonPesquisarConfirmar = new javax.swing.JButton();
-        jButtonPesquisarCancelar = new javax.swing.JButton();
-        jLabelPesquisarQuantidade = new javax.swing.JLabel();
-        jTextFieldPesquisarQuantidade = new javax.swing.JTextField();
+        jInternalFrameCarrinho = new javax.swing.JInternalFrame();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableCarrinho = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
+        jTextFieldCarrinhoTotal = new javax.swing.JTextField();
+        jButtonCarrinhoPagar = new javax.swing.JButton();
+        jButtonCarrinhoCancelar = new javax.swing.JButton();
         jInternalFrameCadastroLanche = new javax.swing.JInternalFrame();
         jLabelCadastroLanche = new javax.swing.JLabel();
         jTextFieldCadastroLancheNome = new javax.swing.JTextField();
@@ -67,6 +63,17 @@ public class GUIMenu extends javax.swing.JFrame {
         jTextFieldEditarId = new javax.swing.JTextField();
         jButtonEditarSalvar = new javax.swing.JButton();
         jButtonEditarCancelar = new javax.swing.JButton();
+        jInternalFramePesquisar = new javax.swing.JInternalFrame();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTablePesquisarPorNome = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBoxPesquisarAcao = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jTextFieldPesquisarID = new javax.swing.JTextField();
+        jButtonPesquisarConfirmar = new javax.swing.JButton();
+        jButtonPesquisarCancelar = new javax.swing.JButton();
+        jLabelPesquisarQuantidade = new javax.swing.JLabel();
+        jTextFieldPesquisarQuantidade = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuCadastro = new javax.swing.JMenu();
         jMenuItemCadastroLanche = new javax.swing.JMenuItem();
@@ -84,7 +91,228 @@ public class GUIMenu extends javax.swing.JFrame {
         setIconImages(null);
 
         jDesktopPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jDesktopPane.setPreferredSize(new java.awt.Dimension(600, 400));
+
+        jInternalFrameCarrinho.setTitle("Carrinho");
+        jInternalFrameCarrinho.setVisible(true);
+
+        jTableCarrinho.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(jTableCarrinho);
+
+        jLabel6.setText("Total: R$");
+
+        jTextFieldCarrinhoTotal.setEditable(false);
+
+        jButtonCarrinhoPagar.setText("Pagar");
+
+        jButtonCarrinhoCancelar.setText("Cancelar");
+
+        javax.swing.GroupLayout jInternalFrameCarrinhoLayout = new javax.swing.GroupLayout(jInternalFrameCarrinho.getContentPane());
+        jInternalFrameCarrinho.getContentPane().setLayout(jInternalFrameCarrinhoLayout);
+        jInternalFrameCarrinhoLayout.setHorizontalGroup(
+            jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
+            .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addGap(41, 41, 41)
+                .addComponent(jTextFieldCarrinhoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameCarrinhoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonCarrinhoPagar)
+                .addGap(32, 32, 32)
+                .addComponent(jButtonCarrinhoCancelar)
+                .addGap(37, 37, 37))
+        );
+        jInternalFrameCarrinhoLayout.setVerticalGroup(
+            jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameCarrinhoLayout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jTextFieldCarrinhoTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jInternalFrameCarrinhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonCarrinhoPagar)
+                    .addComponent(jButtonCarrinhoCancelar))
+                .addGap(0, 29, Short.MAX_VALUE))
+        );
+
+        jDesktopPane.setLayer(jInternalFrameCarrinho, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jDesktopPaneLayout = new javax.swing.GroupLayout(jDesktopPane);
+        jDesktopPane.setLayout(jDesktopPaneLayout);
+        jDesktopPaneLayout.setHorizontalGroup(
+            jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDesktopPaneLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jInternalFrameCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(191, Short.MAX_VALUE))
+        );
+        jDesktopPaneLayout.setVerticalGroup(
+            jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDesktopPaneLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jInternalFrameCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+
+        jInternalFrameCadastroLanche.setMaximumSize(new java.awt.Dimension(0, 0));
+        jInternalFrameCadastroLanche.setPreferredSize(new java.awt.Dimension(400, 280));
+        jInternalFrameCadastroLanche.setVisible(true);
+
+        jLabelCadastroLanche.setText("Nome do Lanche");
+
+        jTextFieldCadastroLancheNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCadastroLancheNomeActionPerformed(evt);
+            }
+        });
+
+        jLabelCadastroLanchePreco.setText("Preço");
+
+        jButtonCadastroLancheSalvar.setText("Salvar");
+        jButtonCadastroLancheSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadastroLancheSalvarActionPerformed(evt);
+            }
+        });
+
+        jButtonCadastroLancheCancelar.setText("Cancelar");
+        jButtonCadastroLancheCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCadastroLancheCancelarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jInternalFrameCadastroLancheLayout = new javax.swing.GroupLayout(jInternalFrameCadastroLanche.getContentPane());
+        jInternalFrameCadastroLanche.getContentPane().setLayout(jInternalFrameCadastroLancheLayout);
+        jInternalFrameCadastroLancheLayout.setHorizontalGroup(
+            jInternalFrameCadastroLancheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameCadastroLancheLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jInternalFrameCadastroLancheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jInternalFrameCadastroLancheLayout.createSequentialGroup()
+                        .addComponent(jLabelCadastroLanche)
+                        .addGap(35, 35, 35)
+                        .addComponent(jTextFieldCadastroLancheNome, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jInternalFrameCadastroLancheLayout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(jInternalFrameCadastroLancheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jInternalFrameCadastroLancheLayout.createSequentialGroup()
+                                .addComponent(jButtonCadastroLancheCancelar)
+                                .addGap(84, 84, 84)
+                                .addComponent(jButtonCadastroLancheSalvar))
+                            .addGroup(jInternalFrameCadastroLancheLayout.createSequentialGroup()
+                                .addComponent(jLabelCadastroLanchePreco)
+                                .addGap(48, 48, 48)
+                                .addComponent(jTextFieldCadastroLanchePreco, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        jInternalFrameCadastroLancheLayout.setVerticalGroup(
+            jInternalFrameCadastroLancheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameCadastroLancheLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jInternalFrameCadastroLancheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldCadastroLancheNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelCadastroLanche))
+                .addGap(18, 18, 18)
+                .addGroup(jInternalFrameCadastroLancheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldCadastroLanchePreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelCadastroLanchePreco))
+                .addGap(47, 47, 47)
+                .addGroup(jInternalFrameCadastroLancheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonCadastroLancheCancelar)
+                    .addComponent(jButtonCadastroLancheSalvar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jInternalFrameEditarCadastro.setTitle("Edição de Cadastro");
+        jInternalFrameEditarCadastro.setVisible(true);
+
+        jLabel3.setText("Nome Do Lanche");
+
+        jTextFieldEditarNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEditarNomeActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Preço");
+
+        jLabel5.setText("ID:");
+
+        jTextFieldEditarId.setEnabled(false);
+
+        jButtonEditarSalvar.setText("Salvar");
+        jButtonEditarSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarSalvarActionPerformed(evt);
+            }
+        });
+
+        jButtonEditarCancelar.setText("Cancelar");
+        jButtonEditarCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarCancelarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jInternalFrameEditarCadastroLayout = new javax.swing.GroupLayout(jInternalFrameEditarCadastro.getContentPane());
+        jInternalFrameEditarCadastro.getContentPane().setLayout(jInternalFrameEditarCadastroLayout);
+        jInternalFrameEditarCadastroLayout.setHorizontalGroup(
+            jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
+                        .addComponent(jButtonEditarSalvar)
+                        .addGap(40, 40, 40)
+                        .addComponent(jButtonEditarCancelar))
+                    .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
+                        .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addGap(52, 52, 52)
+                        .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldEditarNome)
+                            .addComponent(jTextFieldEditarPreco)
+                            .addComponent(jTextFieldEditarId, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE))))
+                .addContainerGap(66, Short.MAX_VALUE))
+        );
+        jInternalFrameEditarCadastroLayout.setVerticalGroup(
+            jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextFieldEditarId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextFieldEditarNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextFieldEditarPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonEditarSalvar)
+                    .addComponent(jButtonEditarCancelar))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
 
         jInternalFramePesquisar.setTitle("Pesquisar Pelo Nome");
         jInternalFramePesquisar.setPreferredSize(new java.awt.Dimension(400, 200));
@@ -106,6 +334,11 @@ public class GUIMenu extends javax.swing.JFrame {
         jLabel1.setText("Selecione a Ação Desejada");
 
         jComboBoxPesquisarAcao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Editar", "Excluir", "Adiconar no Carrinho" }));
+        jComboBoxPesquisarAcao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxPesquisarAcaoActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Qual o ID do Lanche");
 
@@ -184,169 +417,6 @@ public class GUIMenu extends javax.swing.JFrame {
                 .addGap(21, 21, 21))
         );
 
-        jDesktopPane.setLayer(jInternalFramePesquisar, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jDesktopPaneLayout = new javax.swing.GroupLayout(jDesktopPane);
-        jDesktopPane.setLayout(jDesktopPaneLayout);
-        jDesktopPaneLayout.setHorizontalGroup(
-            jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPaneLayout.createSequentialGroup()
-                .addGap(0, 162, Short.MAX_VALUE)
-                .addComponent(jInternalFramePesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jDesktopPaneLayout.setVerticalGroup(
-            jDesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPaneLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jInternalFramePesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jInternalFrameCadastroLanche.setMaximumSize(new java.awt.Dimension(0, 0));
-        jInternalFrameCadastroLanche.setPreferredSize(new java.awt.Dimension(400, 280));
-        jInternalFrameCadastroLanche.setVisible(true);
-
-        jLabelCadastroLanche.setText("Nome do Lanche");
-
-        jTextFieldCadastroLancheNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldCadastroLancheNomeActionPerformed(evt);
-            }
-        });
-
-        jLabelCadastroLanchePreco.setText("Preço");
-
-        jButtonCadastroLancheSalvar.setText("Salvar");
-        jButtonCadastroLancheSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCadastroLancheSalvarActionPerformed(evt);
-            }
-        });
-
-        jButtonCadastroLancheCancelar.setText("Cancelar");
-        jButtonCadastroLancheCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCadastroLancheCancelarActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jInternalFrameCadastroLancheLayout = new javax.swing.GroupLayout(jInternalFrameCadastroLanche.getContentPane());
-        jInternalFrameCadastroLanche.getContentPane().setLayout(jInternalFrameCadastroLancheLayout);
-        jInternalFrameCadastroLancheLayout.setHorizontalGroup(
-            jInternalFrameCadastroLancheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrameCadastroLancheLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jInternalFrameCadastroLancheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrameCadastroLancheLayout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabelCadastroLanchePreco)
-                        .addGap(48, 48, 48)
-                        .addComponent(jTextFieldCadastroLanchePreco, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrameCadastroLancheLayout.createSequentialGroup()
-                        .addComponent(jLabelCadastroLanche)
-                        .addGap(35, 35, 35)
-                        .addComponent(jTextFieldCadastroLancheNome, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrameCadastroLancheLayout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jButtonCadastroLancheCancelar)
-                        .addGap(72, 72, 72)
-                        .addComponent(jButtonCadastroLancheSalvar)))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        jInternalFrameCadastroLancheLayout.setVerticalGroup(
-            jInternalFrameCadastroLancheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrameCadastroLancheLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jInternalFrameCadastroLancheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldCadastroLancheNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelCadastroLanche))
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrameCadastroLancheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldCadastroLanchePreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelCadastroLanchePreco))
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrameCadastroLancheLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonCadastroLancheSalvar)
-                    .addComponent(jButtonCadastroLancheCancelar))
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-
-        jInternalFrameEditarCadastro.setTitle("Edição de Cadastro");
-        jInternalFrameEditarCadastro.setVisible(true);
-
-        jLabel3.setText("Nome Do Lanche");
-
-        jTextFieldEditarNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldEditarNomeActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setText("Preço");
-
-        jLabel5.setText("ID:");
-
-        jTextFieldEditarId.setEnabled(false);
-
-        jButtonEditarSalvar.setText("Salvar");
-        jButtonEditarSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEditarSalvarActionPerformed(evt);
-            }
-        });
-
-        jButtonEditarCancelar.setText("Cancelar");
-        jButtonEditarCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEditarCancelarActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jInternalFrameEditarCadastroLayout = new javax.swing.GroupLayout(jInternalFrameEditarCadastro.getContentPane());
-        jInternalFrameEditarCadastro.getContentPane().setLayout(jInternalFrameEditarCadastroLayout);
-        jInternalFrameEditarCadastroLayout.setHorizontalGroup(
-            jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
-                        .addComponent(jButtonEditarSalvar)
-                        .addGap(40, 40, 40)
-                        .addComponent(jButtonEditarCancelar))
-                    .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
-                        .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(52, 52, 52)
-                        .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldEditarNome)
-                            .addComponent(jTextFieldEditarPreco)
-                            .addComponent(jTextFieldEditarId, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE))))
-                .addContainerGap(61, Short.MAX_VALUE))
-        );
-        jInternalFrameEditarCadastroLayout.setVerticalGroup(
-            jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrameEditarCadastroLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextFieldEditarId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextFieldEditarNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextFieldEditarPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(jInternalFrameEditarCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonEditarSalvar)
-                    .addComponent(jButtonEditarCancelar))
-                .addContainerGap(51, Short.MAX_VALUE))
-        );
-
         jMenuCadastro.setText("Cadastro");
 
         jMenuItemCadastroLanche.setText("Lanche");
@@ -405,25 +475,31 @@ public class GUIMenu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(jDesktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jInternalFramePesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jDesktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jInternalFrameCadastroLanche, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(233, 233, 233)
-                        .addComponent(jInternalFrameEditarCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(454, Short.MAX_VALUE))
+                        .addGap(35, 35, 35)
+                        .addComponent(jInternalFrameEditarCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jInternalFrameCadastroLanche, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(371, 371, 371))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jInternalFrameCadastroLanche, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jInternalFrameEditarCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(73, 73, 73)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(jInternalFrameEditarCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(jInternalFrameCadastroLanche, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(97, 97, 97)
+                .addComponent(jInternalFramePesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 378, Short.MAX_VALUE)
                 .addComponent(jDesktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -485,26 +561,26 @@ public class GUIMenu extends javax.swing.JFrame {
              return jInternalFramePesquisar;
 }
     private void jMenuItemPesquisarLancheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPesquisarLancheActionPerformed
-              modelo = new DefaultTableModel();
-              jTablePesquisarPorNome.setModel(modelo);
-              String nome = JOptionPane.showInputDialog("Informe o Nome do Lanche: ");
-              Lanche lanche = new Lanche();
-               jInternalFramePesquisar.setVisible(true);
-                centralizarInternalFrame(jInternalFramePesquisar);
-              ArrayList<Lanche> lanches = lanche.pesquisar(nome);
-              System.out.println("Qtd lanches encontrados: " + lanches.size());
-              modelo.addColumn("ID");
-              modelo.addColumn("Nome");
-              modelo.addColumn("Preço");
-              
-              for (Lanche lancheAux : lanches){
-                  modelo.addRow (new Object[]{lancheAux.getId(),lancheAux.getNome(), lancheAux.getPreco()});
-                  jTablePesquisarPorNome.setModel(modelo);
+          String nome = JOptionPane.showInputDialog("Informe o Nome do Produto: ");
+           Lanche lanche = new Lanche();
+            ArrayList<Lanche> lanches = lanche.pesquisar(nome);
+            System.out.println("Qtd lanches encontrados: " + lanches.size());
+                if (lanches.isEmpty()) {
+              JOptionPane.showMessageDialog(null, "O produto não existe. Pesquise Sem Acentos e Não use ^ ~ ");
+                    return;
                 }
-                  
-                   jInternalFramePesquisar.setVisible(true);
-              }
+             DefaultTableModel modelo = new DefaultTableModel();
+             modelo.addColumn("ID");
+             modelo.addColumn("Nome");
+             modelo.addColumn("Preço");  
+      
+             for (Lanche lancheAux : lanches){
+             modelo.addRow(new Object[]{lancheAux.getId(), lancheAux.getNome(), lancheAux.getPreco()});
+             jTablePesquisarPorNome.setModel(modelo);
+             }
+              jInternalFramePesquisar.setVisible(true);     
 
+    }
 
     public JTable getjTablePesquisarPorNome(){
       jInternalFramePesquisar.setVisible(true);
@@ -520,7 +596,7 @@ public class GUIMenu extends javax.swing.JFrame {
                 // TODO add your handling code here:
           Lanche lanche = new Lanche();
           Carrinho carrinho = new Carrinho();
-         
+                   
           String opcao = jComboBoxPesquisarAcao.getSelectedItem().toString();
           System.out.println("Opção selecionada: "+opcao);
           
@@ -545,9 +621,15 @@ public class GUIMenu extends javax.swing.JFrame {
              jTextFieldEditarPreco.setText(lancheRecuperado.getPreco()+"");
              jInternalFrameEditarCadastro.setVisible(true);
              } else if (opcao.equals("Adicionar no Carrinho")){ //Adicionar no carrinho
+                 int id = Integer.parseInt(jTextFieldPesquisarID.getText());
+                    int quantidade = Integer.parseInt(jTextFieldPesquisarQuantidade.getText());
+                    
+                    lanche.adicionarCarrinho(id, quantidade);            
+                                     
                  JOptionPane.showMessageDialog(rootPane,"O lanche foi Adicionado no Carrinho!");
                  jTextFieldPesquisarID.setText("");
                  jComboBoxPesquisarAcao.setSelectedIndex(0);
+                 jTextFieldPesquisarQuantidade.setText("");
                  jInternalFramePesquisar.setVisible(false);
                  
                   
@@ -622,6 +704,10 @@ public class GUIMenu extends javax.swing.JFrame {
                   
                    jInternalFramePesquisar.setVisible(true);
     }//GEN-LAST:event_jMenuItemEdicaoLancheActionPerformed
+
+    private void jComboBoxPesquisarAcaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPesquisarAcaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxPesquisarAcaoActionPerformed
      private void centralizarInternalFrame(JInternalFrame frame) {
      // Força o cálculo do layout interno
      int largura = jDesktopPane.getWidth();
@@ -642,6 +728,8 @@ public class GUIMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastroLancheCancelar;
     private javax.swing.JButton jButtonCadastroLancheSalvar;
+    private javax.swing.JButton jButtonCarrinhoCancelar;
+    private javax.swing.JButton jButtonCarrinhoPagar;
     private javax.swing.JButton jButtonEditarCancelar;
     private javax.swing.JButton jButtonEditarSalvar;
     private javax.swing.JButton jButtonPesquisarCancelar;
@@ -649,6 +737,7 @@ public class GUIMenu extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxPesquisarAcao;
     private javax.swing.JDesktopPane jDesktopPane;
     private javax.swing.JInternalFrame jInternalFrameCadastroLanche;
+    private javax.swing.JInternalFrame jInternalFrameCarrinho;
     private javax.swing.JInternalFrame jInternalFrameEditarCadastro;
     private javax.swing.JInternalFrame jInternalFramePesquisar;
     private javax.swing.JLabel jLabel1;
@@ -656,6 +745,7 @@ public class GUIMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelCadastroLanche;
     private javax.swing.JLabel jLabelCadastroLanchePreco;
     private javax.swing.JLabel jLabelPesquisarQuantidade;
@@ -669,9 +759,12 @@ public class GUIMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuPesquisar;
     private javax.swing.JMenu jMenuVendas;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTableCarrinho;
     private javax.swing.JTable jTablePesquisarPorNome;
     private javax.swing.JTextField jTextFieldCadastroLancheNome;
     private javax.swing.JTextField jTextFieldCadastroLanchePreco;
+    private javax.swing.JTextField jTextFieldCarrinhoTotal;
     private javax.swing.JTextField jTextFieldEditarId;
     private javax.swing.JTextField jTextFieldEditarNome;
     private javax.swing.JTextField jTextFieldEditarPreco;
@@ -679,6 +772,10 @@ public class GUIMenu extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldPesquisarQuantidade;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
+
+    private int IntegerParseInt(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
       
 }

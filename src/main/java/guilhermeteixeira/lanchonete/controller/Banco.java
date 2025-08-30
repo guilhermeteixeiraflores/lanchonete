@@ -217,6 +217,7 @@ public class Banco {
         
            try {
                PreparedStatement stmt = conexao.prepareStatement(sql);
+               
                stmt.setString(1, lanche.getNome());
                stmt.setDouble(2, lanche.getPreco());
                stmt.setInt(3, quantidade);

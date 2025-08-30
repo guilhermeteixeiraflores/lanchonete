@@ -95,9 +95,9 @@ public class Lanche {
                     }
                   public void adicionarCarrinho(int id, int quantidade){
                    Lanche lanche = buscarPorId(id);
-                   Banco b = new Banco();
-                   Connection conexao = b.conectar();
-                   b.adicionarCarrinho(lanche, quantidade, conexao);
+                    Banco b = new Banco();
+                    Connection conexao = b.conectar();
+                    b.adicionarCarrinho(lanche, quantidade, conexao);
                   }
     /**
      * @return the id
